@@ -10,7 +10,6 @@
 #include <vector>
 #include <algorithm>
 #include "../utils/utils.h"
-#include "../utils/omp.h"
 
 namespace xgboost {
 namespace learner {

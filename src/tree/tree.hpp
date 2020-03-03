@@ -5,6 +5,7 @@
  * \brief implementation of regression tree
  * \author Tianqi Chen: tianqi.tchen@gmail.com 
  */
+#include <climits>
 #include "tree_model.h"
 
 namespace xgboost {

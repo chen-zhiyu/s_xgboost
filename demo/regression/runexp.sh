@@ -1,10 +1,10 @@
-#!/bin/bash
+cl#!/bin/bash
 # map the data to features. For convenience we only use 7 original attributes and encode them as features in a trivial way 
 python mapfeat.py
 # split train and test
 python mknfold.py machine.txt 1
 # training and output the models
-../../xgboost machine.conf
+../../xgboost machine.conf data=machine.txt.train model_out=0002.model
 # output predictions of test data
 ../../xgboost machine.conf task=pred model_in=0002.model
 # print the boosters of 0002.model in dump.raw.txt

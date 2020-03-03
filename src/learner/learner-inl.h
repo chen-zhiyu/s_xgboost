@@ -9,7 +9,6 @@
 #include <cstring>
 #include "dmatrix.h"
 #include "evaluation.h"
-#include "../utils/omp.h"
 #include "../gbm/gbtree-inl.h"
 #include "../utils/utils.h"
 #include "../utils/io.h"
@@ -79,10 +78,11 @@ class BoostLearner {
    */
   inline void SetParam(const char *name, const char *val) {
     if(!strcmp(name, "silent")) silent = atoi(val);
-    if(!strcmp(name, "eval_metric")) evaluator_.AddEval(val);                
+    if(!strcmp(name, "eval_metric")) evaluator_.AddEval(val);
+    /*
     if (!strcmp(name, "nthread")) {
       omp_set_num_threads(atoi(val));
-    }
+    }*/
     mparam.SetParam(name, val);
     base_gbm.SetParam(name, val);
   }
